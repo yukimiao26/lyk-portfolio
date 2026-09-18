@@ -61,11 +61,16 @@ function setProjectModal(open) {
 document.querySelectorAll("[data-project-gallery]").forEach((gallery) => {
   const image = gallery.querySelector("[data-project-gallery-image]");
   const count = gallery.querySelector("[data-project-gallery-count]");
-  const slides = [
+  const fallbackSlides = [
     { src: "assets/img/corpus-collector-1.png", alt: "Corpus Collector 语料挖掘助手界面 1" },
     { src: "assets/img/corpus-collector-2.png", alt: "Corpus Collector 语料挖掘助手界面 2" },
     { src: "assets/img/corpus-collector-3.png", alt: "Corpus Collector 语料挖掘助手界面 3" },
   ];
+  const customSlides = gallery.dataset.projectSlides?.split("|").filter(Boolean).map((src, slideIndex) => ({
+    src,
+    alt: `${gallery.dataset.projectAlt || image?.alt || "项目界面截图"} ${slideIndex + 1}`,
+  }));
+  const slides = customSlides?.length ? customSlides : fallbackSlides;
   let index = 0;
 
   function render(nextIndex) {

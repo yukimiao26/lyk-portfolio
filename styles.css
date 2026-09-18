@@ -4981,3 +4981,89 @@ button.file-strip {
     min-height: 380px;
   }
 }
+
+/* V5.12 AI Quality Copilot project */
+.ai-quality-showcase {
+  align-items: stretch;
+}
+
+.ai-quality-gallery .project-gallery-frame {
+  height: 254px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 252, .68);
+}
+
+.ai-quality-gallery img {
+  width: 100%;
+  height: 254px !important;
+  object-fit: contain;
+  object-position: center;
+}
+
+.ai-quality-summary-copy.project-summary-flip {
+  min-height: 356px;
+}
+
+.ai-quality-summary-copy .project-summary-front {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 64px;
+}
+
+.creator-copy.project-summary-flip.ai-quality-summary-copy .project-links {
+  position: absolute;
+  right: 2px;
+  bottom: 16px;
+  margin-top: 0;
+  justify-content: flex-end;
+}
+
+.ai-quality-summary-copy .project-summary-back {
+  display: block;
+  overflow-y: auto;
+  padding-right: 8px;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(50, 108, 171, .36) transparent;
+}
+
+.ai-quality-summary-copy .project-summary-back h4 {
+  margin: 0 0 6px;
+  color: var(--blue-900);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.ai-quality-summary-copy .project-summary-back h4:not(:first-child) {
+  margin-top: 14px;
+}
+
+.ai-quality-summary-copy .project-summary-back p {
+  max-width: none;
+  margin: 0 0 6px;
+}
+
+.ai-quality-summary-copy .project-summary-back b {
+  color: var(--ink);
+  font-weight: 900;
+}
+
+@media (max-width: 900px) {
+  .ai-quality-showcase.project-card-small.creator-card {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-quality-gallery .project-gallery-frame,
+  .ai-quality-gallery img {
+    height: auto !important;
+  }
+
+  .ai-quality-summary-copy.project-summary-flip {
+    min-height: 420px;
+  }
+}
